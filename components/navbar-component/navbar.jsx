@@ -17,7 +17,8 @@ import { scrollToTop } from "../../constants/scrollToTop";
 const NavBar = ({ navBar2, showCase1Page }) => {
   const [totalQty, setTotalQty] = useState(0);
   const [subTotal, setSubTotal] = useState(0);
-  const { cartItems, setCartItems, modal, setModal } = useContext(CartContext);
+  const { cartItems, setCartItems, modal, setModal, removeFromCart } =
+    useContext(CartContext);
   const [whenScroll, setWhenScroll] = useState("bg-transparent");
   const [logo, setlogo] = useState("/Homyz-logo.png");
   const [textColor, setTextColor] = useState("text-white");
@@ -142,9 +143,7 @@ const NavBar = ({ navBar2, showCase1Page }) => {
                                   </h3>
                                   <p
                                     onClick={() => {
-                                      let arr = cartItems;
-                                      arr.splice(i, 1);
-                                      setCartItems([...arr]);
+                                      removeFromCart(e.id);
                                     }}
                                     className="text-lg w-fit hover:text-black transition-all duration-300 cursor-pointer text-red-500 hover mt-3"
                                   >
