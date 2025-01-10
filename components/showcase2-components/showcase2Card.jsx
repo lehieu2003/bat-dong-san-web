@@ -1,8 +1,9 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import { scrollToTop } from "../../constants/scrollToTop";
 import { motion } from "framer-motion";
 import { animationVariants } from "../../constants/animationVariants";
+import PropTypes from "prop-types";
+
 const Showcase2Card = ({ src, href, title }) => {
   return (
     <motion.div
@@ -25,6 +26,11 @@ const Showcase2Card = ({ src, href, title }) => {
       <img className="w-full h-full object-cover" src={src} alt="img" />
     </motion.div>
   );
+};
+Showcase2Card.propTypes = {
+  src: PropTypes.string.isRequired,
+  href: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
 };
 
 export default Showcase2Card;

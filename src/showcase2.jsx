@@ -14,9 +14,10 @@ const ShowCase2 = () => {
         style={{ maxWidth: 1200 }}
         className="mx-auto gap-10 grid grid-rows-2 grid-cols-3 max-lg:grid-rows-3 max-lg:grid-cols-2 max-sm:grid-cols-1 max-sm:grid-rows-6 p-10 max-md:px-5 "
       >
-        {showCase.map((e, i) => {
+        {showCase.map((e) => {
           return (
             <Showcase2Card
+              key={e.id}
               href={`/projects/${e.id}`}
               src={e.coverImage}
               title={e.city}

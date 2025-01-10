@@ -1,7 +1,5 @@
-import { motion } from "framer-motion";
-import React from "react";
 import { Link } from "react-router-dom";
-import { animationVariants } from "../../constants/animationVariants";
+import PropTypes from "prop-types";
 const ResultCard = ({ title, desc, ind }) => {
   return (
     <div className="flex flex-col gap-4">
@@ -25,6 +23,11 @@ const ResultCard = ({ title, desc, ind }) => {
       </Link>
     </div>
   );
+};
+ResultCard.propTypes = {
+  title: PropTypes.string.isRequired,
+  desc: PropTypes.string.isRequired,
+  ind: PropTypes.number.isRequired,
 };
 
 export default ResultCard;

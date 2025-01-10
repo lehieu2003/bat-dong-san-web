@@ -1,6 +1,5 @@
-import React, { useRef, useState } from "react";
 // Import Swiper React components
-import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
 import "swiper/css";
@@ -12,7 +11,6 @@ import "swiper/css/navigation";
 import { Pagination, Navigation } from "swiper/modules";
 
 export default function Carousel() {
-  const swiper = useSwiper();
   return (
     <>
       <Swiper

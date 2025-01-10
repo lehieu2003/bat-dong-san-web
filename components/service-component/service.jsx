@@ -18,7 +18,9 @@ import FreeTrial from "../free-trial-component/freeTrial";
 import { motion } from "framer-motion";
 import { animationVariants } from "../../constants/animationVariants";
 import { scrollToTop } from "../../constants/scrollToTop";
-const ServicePage = ({ id, title, breif, descr, imageSrc }) => {
+import PropTypes from "prop-types";
+
+const ServicePage = ({ title, imageSrc }) => {
   return (
     <>
       <div
@@ -232,6 +234,10 @@ const ServicePage = ({ id, title, breif, descr, imageSrc }) => {
       <FreeTrial />
     </>
   );
+};
+ServicePage.propTypes = {
+  title: PropTypes.string.isRequired,
+  imageSrc: PropTypes.string.isRequired,
 };
 
 export default ServicePage;

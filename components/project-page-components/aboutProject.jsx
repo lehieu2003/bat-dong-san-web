@@ -9,6 +9,7 @@ import {
 import "./aboutProject.css";
 import Button from "../buttons-component/solidbutton";
 import { Link, useParams } from "react-router-dom";
+import PropTypes from "prop-types";
 import { showCase } from "../../constants/showcase";
 import { animationVariants } from "../../constants/animationVariants";
 import { motion } from "framer-motion";
@@ -19,7 +20,7 @@ const AboutProject = ({ heroImageSrc, attachment }) => {
   const project = showCase[param.id - 1];
   useEffect(() => {
     document.title = `${project.city} - Homyz `;
-  }, [param]);
+  }, [param, project]);
   return (
     <div className="overflow-hidden">
       <div
@@ -220,6 +221,10 @@ const AboutProject = ({ heroImageSrc, attachment }) => {
       </div>
     </div>
   );
+};
+AboutProject.propTypes = {
+  heroImageSrc: PropTypes.string.isRequired,
+  attachment: PropTypes.string.isRequired,
 };
 
 export default AboutProject;

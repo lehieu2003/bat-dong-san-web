@@ -5,6 +5,8 @@ import { formatCompactNumber } from "../../constants/formatNumber";
 import { scrollToTop } from "../../constants/scrollToTop";
 import { animationVariants } from "../../constants/animationVariants";
 import { motion } from "framer-motion";
+import PropTypes from "prop-types";
+
 const ExculusivePropertyCard = ({
   titlePart1,
   titlePart2,
@@ -63,6 +65,16 @@ const ExculusivePropertyCard = ({
       </div>
     </div>
   );
+};
+ExculusivePropertyCard.propTypes = {
+  titlePart1: PropTypes.string.isRequired,
+  titlePart2: PropTypes.string.isRequired,
+  pricing: PropTypes.number.isRequired,
+  imgSrc: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  href: PropTypes.string.isRequired,
+  cardHeight: PropTypes.string.isRequired,
+  bgColor: PropTypes.string.isRequired,
 };
 
 export default ExculusivePropertyCard;

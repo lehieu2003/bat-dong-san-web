@@ -1,4 +1,5 @@
 import { FaAngleDown, FaBars, FaShoppingCart } from "react-icons/fa";
+import PropTypes from "prop-types";
 import "./navbar.css";
 import Button from "../buttons-component/solidbutton";
 import { Link } from "react-router-dom";
@@ -16,9 +17,7 @@ import { scrollToTop } from "../../constants/scrollToTop";
 const NavBar = ({ navBar2, showCase1Page }) => {
   const [totalQty, setTotalQty] = useState(0);
   const [subTotal, setSubTotal] = useState(0);
-  const [check, setCheck] = useState(false);
-  const { cartItems, setCartItems, addToCart, modal, setModal } =
-    useContext(CartContext);
+  const { cartItems, setCartItems, modal, setModal } = useContext(CartContext);
   const [whenScroll, setWhenScroll] = useState("bg-transparent");
   const [logo, setlogo] = useState("/Homyz-logo.png");
   const [textColor, setTextColor] = useState("text-white");
@@ -50,7 +49,7 @@ const NavBar = ({ navBar2, showCase1Page }) => {
       0
     );
     setTotalQty(totalQuantity);
-    let total = cartItems.map((e, i) => {
+    let total = cartItems.map((e) => {
       return e.quantity * e.price;
     });
     let totalPrice = total.reduce((acc, product) => acc + product, 0);
@@ -142,7 +141,7 @@ const NavBar = ({ navBar2, showCase1Page }) => {
                                     PKR {formatCompactNumber(e.price)}/Month
                                   </h3>
                                   <p
-                                    onClick={(event) => {
+                                    onClick={() => {
                                       let arr = cartItems;
                                       arr.splice(i, 1);
                                       setCartItems([...arr]);
@@ -203,9 +202,7 @@ const NavBar = ({ navBar2, showCase1Page }) => {
                     padding={"py-2"}
                   />
                   {checkOut ? (
-                    <p className="text-red-500">
-                      Checkout is disabled on this site.
-                    </p>
+                    <p className="text-red-500">Not support feature yet.</p>
                   ) : (
                     ""
                   )}
@@ -507,6 +504,10 @@ const NavBar = ({ navBar2, showCase1Page }) => {
       </nav>
     </>
   );
+};
+NavBar.propTypes = {
+  navBar2: PropTypes.bool,
+  showCase1Page: PropTypes.bool,
 };
 
 export default NavBar;

@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import { scrollToTop } from "../../constants/scrollToTop";
 import { animationVariants } from "../../constants/animationVariants";
 import { motion } from "framer-motion";
+import PropTypes from "prop-types";
+
 const ProjectCard = ({ src, title, href }) => {
   return (
     <div
@@ -41,6 +43,12 @@ const ProjectCard = ({ src, title, href }) => {
       </div>
     </div>
   );
+};
+
+ProjectCard.propTypes = {
+  src: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  href: PropTypes.string.isRequired,
 };
 
 export default ProjectCard;

@@ -9,7 +9,7 @@ const Service = () => {
   const serviceData = servicesData[params.id - 1];
 
   useEffect(() => {
-    const serviceData = servicesData.findIndex((e, i) => {
+    const serviceData = servicesData.findIndex((e) => {
       return e.id == params.id;
     });
     console.log(serviceData);

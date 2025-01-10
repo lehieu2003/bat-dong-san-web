@@ -1,4 +1,3 @@
-import React from "react";
 import { animationVariants } from "../../constants/animationVariants";
 import { motion } from "framer-motion";
 const ShowCase2HeroSection = () => {

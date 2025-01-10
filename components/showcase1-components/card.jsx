@@ -1,4 +1,6 @@
-const Card = ({ src, href, title }) => {
+import PropTypes from "prop-types";
+
+const Card = ({ src, title }) => {
   return (
     <div className="relative w-fit">
       <div className="z-40 w-full h-full top-4 opacity-0 hover:opacity-100 transition-all duration-500 right-4 absolute pt-72 pl-10 bg-red-400">
@@ -9,6 +11,10 @@ const Card = ({ src, href, title }) => {
       <img src={src} alt="img" />
     </div>
   );
+};
+Card.propTypes = {
+  src: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
 };
 
 export default Card;

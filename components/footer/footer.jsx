@@ -1,5 +1,5 @@
 import { Button, Input, Textarea, useToast } from "@chakra-ui/react";
-import React, { useState } from "react";
+import { useState } from "react";
 import { FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa";
 import axios from "axios";
 import { Link } from "react-router-dom";
@@ -46,14 +46,14 @@ const Footer = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = () => {
     const errors = validateForm(formData);
 
     if (errors === false) {
       setBtnLoader(true);
       axios
         .post("https://homyz-server.vercel.app/contact", formData)
-        .then((response) => {
+        .then(() => {
           showToast();
           setFormData({
             firstName: "",

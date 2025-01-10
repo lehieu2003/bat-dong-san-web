@@ -1,9 +1,10 @@
 import { motion } from "framer-motion";
-import React from "react";
 import { FaArrowRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { animationVariants } from "../../constants/animationVariants";
 import { scrollToTop } from "../../constants/scrollToTop";
+import PropTypes from "prop-types";
+
 const ServiceCard = ({ id, title, imgSrc, iconSrc, brief }) => {
   return (
     <motion.div
@@ -41,6 +42,13 @@ const ServiceCard = ({ id, title, imgSrc, iconSrc, brief }) => {
       </div>
     </motion.div>
   );
+};
+ServiceCard.propTypes = {
+  id: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  imgSrc: PropTypes.string.isRequired,
+  iconSrc: PropTypes.string.isRequired,
+  brief: PropTypes.string.isRequired,
 };
 
 export default ServiceCard;

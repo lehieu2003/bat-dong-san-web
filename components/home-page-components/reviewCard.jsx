@@ -1,4 +1,6 @@
 import "./reviewcard.css";
+import PropTypes from "prop-types";
+
 const ReviewCard = ({ title, from, imgSrc }) => {
   return (
     <div
@@ -15,6 +17,12 @@ const ReviewCard = ({ title, from, imgSrc }) => {
       </div>
     </div>
   );
+};
+
+ReviewCard.propTypes = {
+  title: PropTypes.string.isRequired,
+  from: PropTypes.string.isRequired,
+  imgSrc: PropTypes.string.isRequired,
 };
 
 export default ReviewCard;

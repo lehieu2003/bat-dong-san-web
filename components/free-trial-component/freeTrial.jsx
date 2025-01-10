@@ -1,4 +1,3 @@
-import React from "react";
 import Button from "../buttons-component/solidbutton";
 import { Link } from "react-router-dom";
 import { scrollToTop } from "../../constants/scrollToTop";

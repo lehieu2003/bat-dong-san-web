@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import {
   FaCoins,
   FaEnvelope,
@@ -63,14 +63,14 @@ const ContactPage = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = () => {
     const errors = validateForm(formData);
 
     if (errors === false) {
       setBtnLoader(true);
       axios
         .post("https://homyz-server.vercel.app/contact", formData)
-        .then((response) => {
+        .then(() => {
           showToast();
           setFormData({
             firstName: "",

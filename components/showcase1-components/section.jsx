@@ -4,6 +4,7 @@ import Button from "../buttons-component/solidbutton";
 import { scrollToTop } from "../../constants/scrollToTop";
 import { animationVariants } from "../../constants/animationVariants";
 import { motion } from "framer-motion";
+import PropTypes from "prop-types";
 const Section = ({ url, title, desc, href, attachment }) => {
   return (
     <div
@@ -32,6 +33,13 @@ const Section = ({ url, title, desc, href, attachment }) => {
       </motion.div>
     </div>
   );
+};
+Section.propTypes = {
+  url: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  desc: PropTypes.string.isRequired,
+  href: PropTypes.string.isRequired,
+  attachment: PropTypes.string,
 };
 
 export default Section;

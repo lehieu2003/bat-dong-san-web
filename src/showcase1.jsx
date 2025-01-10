@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import Section from "../components/showcase1-components/section";
 import { showCase } from "../constants/showcase";
-const showcase1 = () => {
+const ShowCase1 = () => {
   useEffect(() => {
     document.title = "Showcase 1 - Homyz";
   }, []);
@@ -23,4 +23,4 @@ const showcase1 = () => {
   );
 };
 
-export default showcase1;
+export default ShowCase1;

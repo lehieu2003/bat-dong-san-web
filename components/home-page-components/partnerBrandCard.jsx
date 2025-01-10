@@ -1,4 +1,4 @@
-import React from "react";
+import PropTypes from "prop-types";
 
 const PartnerBrandCard = ({ title, src, alt }) => {
   return (
@@ -7,6 +7,12 @@ const PartnerBrandCard = ({ title, src, alt }) => {
       <h1 className="text-2xl font-semibold">{title}</h1>
     </div>
   );
+};
+
+PartnerBrandCard.propTypes = {
+  title: PropTypes.string.isRequired,
+  src: PropTypes.string.isRequired,
+  alt: PropTypes.string.isRequired,
 };
 
 export default PartnerBrandCard;

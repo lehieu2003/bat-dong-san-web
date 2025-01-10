@@ -1,11 +1,12 @@
-import { Button, Input, Toast, useToast } from "@chakra-ui/react";
+import { Button, Input, useToast } from "@chakra-ui/react";
+import PropTypes from "prop-types";
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import ResultCard from "./resultCard";
 import { motion } from "framer-motion";
 import { animationVariants } from "../../constants/animationVariants";
 
-const ResultPage = ({ searchParams, setSearchParams }) => {
+const ResultPage = ({ searchParams }) => {
   const [inpValue, setInpValue] = useState(searchParams.get("query"));
   const [btnLoader, setBtnLoader] = useState(false);
   const [data, setData] = useState([]);
@@ -130,6 +131,9 @@ const ResultPage = ({ searchParams, setSearchParams }) => {
       )}
     </div>
   );
+};
+ResultPage.propTypes = {
+  searchParams: PropTypes.object.isRequired,
 };
 
 export default ResultPage;

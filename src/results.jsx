@@ -1,5 +1,4 @@
-import React, { useEffect } from "react";
-import { useLocation } from "react-router";
+import { useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import ResultPage from "../components/result-page-components/resultPage";
 

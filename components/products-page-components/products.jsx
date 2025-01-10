@@ -1,5 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
-// import Button from "../buttons-components/solidbutton";
+import { useContext, useEffect, useState } from "react";
 import {
   NumberInput,
   NumberInputField,
@@ -8,14 +7,14 @@ import {
   NumberDecrementStepper,
   Button,
 } from "@chakra-ui/react";
-import ImageSlider from "./imageSlider";
 import { CartContext } from "../../context/cartContext";
 import { formatCompactNumber } from "../../constants/formatNumber";
 import { motion } from "framer-motion";
 import { animationVariants } from "../../constants/animationVariants";
-import { useParams } from "react-router";
 import { rentHouses } from "../../constants/data";
 import ExculusivePropertyCard from "../home-page-components/exculusivePropertyCard";
+import PropTypes from "prop-types";
+
 const Product = ({
   id,
   title,
@@ -57,7 +56,7 @@ const Product = ({
 
   useEffect(() => {
     setOtherItems(
-      rentHouses.filter((e, i) => {
+      rentHouses.filter((e) => {
         return e.id != id;
       })
     );
@@ -203,6 +202,16 @@ const Product = ({
       </div>
     </>
   );
+};
+
+Product.propTypes = {
+  id: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  moreImages: PropTypes.arrayOf(PropTypes.string).isRequired,
+  mainImage: PropTypes.string.isRequired,
+  descr: PropTypes.string.isRequired,
+  details: PropTypes.arrayOf(PropTypes.string).isRequired,
+  price: PropTypes.number.isRequired,
 };
 
 export default Product;
