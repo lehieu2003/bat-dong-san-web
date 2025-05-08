@@ -61,5 +61,3 @@ If you would like to contribute to the Homyz project, feel free to submit issues
 for live demo of Homyz &#128073; <a href="https://bat-dong-san-web.vercel.app/">click here.</a>
 
 <hr>
-
-made with &#128151; by <a href="https://www.mubashiralam.com">"Mubashir Alam"</a>.
